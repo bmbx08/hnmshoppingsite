@@ -1,5 +1,7 @@
+import { useState, useEffect } from 'react';
 import './App.css';
-import { Route,Routes } from 'react-router';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Route,Routes, useNavigate } from 'react-router';
 import ProductAll from './page/ProductAll';
 import Login from './page/Login';
 import ProductDetail from './page/ProductDetail';
@@ -18,12 +20,18 @@ import Navbar from './component/Navbar';
 
 //json server실행 명령어: npx json-server --watch db.json --port 5000
 function App() {
+  const[authenticate,setAuthenticate]=useState(false); //true면 로그인이 됨 false면 로그인이 안됨
+
+  useEffect(()=>{
+    console.log("authenticate",authenticate);
+  },[authenticate])
+
   return (
     <div>
       <Navbar/>
       <Routes>
-        <Route path="/" element={<ProductAll/>}/>
-        <Route path="/login" element={<Login/>}/>
+        <Route path="/" element={<ProductAll authenticate={authenticate}/>}/>
+        <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>}/>
         <Route path="/product/:id" element={<ProductDetail/>}/>
       </Routes>
     </div>

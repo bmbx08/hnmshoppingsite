@@ -4,22 +4,40 @@
     margin:20px;
 }
 
+.login-button:hover{
+    cursor:pointer;
+}
+
 .nav-section{
     display: flex;
     justify-content: center;
+    padding: 25px;
+    margin-bottom: 15px;
+}
+
+.user-icon{
+    margin-right:5px;
+    margin-top:5px;
 }
 
 .menu-list{
     display: flex;
     list-style-type: none;
-}
-
-ul{
     padding-left:0px;
+    margin-bottom: 30px;
 }
 
 .menu-list li{
     padding:10px;
+}
+
+.menu-list a{
+    text-decoration:none;
+    color: black;
+}
+
+.menu-list a:hover{
+    color:lightgray;
 }
 
 .menu-area{
@@ -30,7 +48,6 @@ ul{
 .search-area{
     position:absolute;
     right: 20px;
-    top: 150px;
     padding-bottom:3px;
     border-bottom: 1px solid black;
 }
@@ -42,4 +59,12 @@ ul{
 input{
     border:none;
     padding-left: 6px;
+}
+
+:focus-visible {
+    outline: -webkit-focus-ring-color auto 0px; 
+}
+
+.product-card:hover{
+    transform: scale(1.1);
 }
