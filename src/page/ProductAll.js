@@ -3,11 +3,13 @@ import ProductCard from "../component/ProductCard";
 import {Col, Container, Row} from "react-bootstrap";
 
 const ProductAll = ({authenticate}) => {
+
   const [productList, setProductList] = useState([]);
 
   const getProducts = async () => {
-    let url = `https://my-json-server.typicode.com/bmbx08/hnmshoppingsite`;
+    let url = `https://my-json-server.typicode.com/bmbx08/hnmshoppingsite/products`;
     let response = await fetch(url);
+    console.log(response);
     let data = await response.json();
     console.log(data);
     setProductList(data);
