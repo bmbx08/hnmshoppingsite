@@ -2,7 +2,7 @@ import React, {useEffect, useState} from "react";
 import ProductCard from "../component/ProductCard";
 import {Col, Container, Row} from "react-bootstrap";
 
-const ProductAll = ({authenticate}) => {
+const ProductAll = () => {
 
   const [productList, setProductList] = useState([]);
 
@@ -25,7 +25,7 @@ const ProductAll = ({authenticate}) => {
         <Row>
           {productList.map((menu) => (
             <Col lg={3}>
-              <ProductCard item={menu} authenticate={authenticate}/>
+              <ProductCard item={menu}/>
             </Col>
           ))}
         </Row>

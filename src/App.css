@@ -68,3 +68,25 @@ input{
 .product-card:hover{
     transform: scale(1.1);
 }
+
+.product-img{
+    display:flex;
+    justify-content: flex-end;
+}
+
+.detail-section>div{
+    margin-bottom: 1em;
+}
+
+.product-title{
+    font-size: 1.5em;
+}
+
+.conscious-text{
+    font-size: 0.8em;
+}
+
+.detail-button-style{
+    width:100%;
+}
+
