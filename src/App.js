@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div>
-      <Navbar/>
+      <Navbar authenticate={authenticate} setAuthenticate={setAuthenticate}/>
       <Routes>
         <Route path="/" element={<ProductAll />}/>
         <Route path="/login" element={<Login setAuthenticate={setAuthenticate}/>}/>
@@ -40,3 +40,7 @@ function App() {
 }
 
 export default App;
+
+//꾸미기 아이디어
+//1. 신제품들 carousel로 상단에 표시
+//2. 

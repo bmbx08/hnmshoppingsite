@@ -27,16 +27,13 @@ const ProductDetail = () => {
         </Col>
         <Col className='detail-section'>
           <div className='product-title'>{product?.title}</div>
-          <div class>₩{product?.price}</div>
+          <div>₩{product?.price}</div>
           <div className='conscious-text'>{product?.choice==true?"Conscious Choice":""}</div>
-          {/* <div>{product?.size}</div> */}
-          {product?.size.map((size)=>{
-            <div>{size}{size}</div>
-          })}
           <DropdownButton id="dropdown-basic-button" variant='outline-dark' title="사이즈 선택">
-            {product?.size.map((size)=>{
+            {product?.size.map((size)=>(
               <Dropdown.Item href="#/action-1">{size}</Dropdown.Item>
-            })}
+            ))} 
+            {/* .map에서 소괄호()를 쓰던가(암시적 반환), 중괄호{}와 return을 사용해야됨(명시적 변환) */}
           </DropdownButton>
           <Button variant="dark" className='detail-button-style'>추가</Button>
         </Col>

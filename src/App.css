@@ -1,6 +1,10 @@
-.login-button{
+.top-navbar{
     display: flex;
     justify-content: flex-end;
+}
+
+.login-button{
+    display:flex;
     margin:20px;
 }
 
@@ -15,9 +19,18 @@
     margin-bottom: 15px;
 }
 
+.nav-section>img:hover{
+    cursor:pointer;
+}
+
 .user-icon{
     margin-right:5px;
     margin-top:5px;
+}
+
+.menu-area{
+    display: flex;
+    justify-content: center;
 }
 
 .menu-list{
@@ -38,11 +51,6 @@
 
 .menu-list a:hover{
     color:lightgray;
-}
-
-.menu-area{
-    display: flex;
-    justify-content: center;
 }
 
 .search-area{
@@ -90,3 +98,68 @@ input{
     width:100%;
 }
 
+
+@media (max-width: 575px){
+    .top-navbar{
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .top-navbar>button{
+        width: 3em;
+        height: 2.5em;
+        margin: 1em;
+    }
+
+    .offcanvas-title{
+        margin: 10px;
+        margin-top: 20px; 
+    }
+
+    .nav-section{
+        padding:10px;
+        padding-bottom: 20px;
+    }
+
+    .menu-area{
+        display:flex;
+        justify-content: middle;
+        margin-bottom: 4em;
+    }
+    
+    .search-area{
+        position:relative;
+        left: 10px;
+        width: 80%;
+        padding-bottom:3px;
+        border: 1px solid black;
+        border-radius: 20px;
+    }
+
+    .search-area>input{
+        width:93%;
+    }
+
+    input{
+        padding-left: 15px;
+    }
+
+    .search-icon{
+        position: relative;
+        left: 9px;
+    }
+
+    .column{
+        display:flex;
+        justify-content: center;
+        margin-bottom: 3em;
+    }
+
+    .product-card{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}
