@@ -59,7 +59,7 @@ const Navbar = ({authenticate,setAuthenticate}) => {
           <FontAwesomeIcon icon={faBars} />
         </Button>
 
-        <Offcanvas show={show} onHide={handleClose} responsive="sm">
+        <Offcanvas className="offcanvas-style" show={show} onHide={handleClose} responsive="sm">
           <Offcanvas.Header closeButton>
             <Offcanvas.Title>
               <img

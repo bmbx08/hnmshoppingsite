@@ -17,19 +17,19 @@ const Login = ({setAuthenticate}) => {
     <Container>
       <Form onSubmit={(event)=>loginUser(event)}> {/*Form에서는 onSubmit을 onclick 대신 사용*/}
         <Form.Group className="mb-3" controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>아이디</Form.Label>
           <Form.Control type="email" placeholder="Enter email" />
-          <Form.Text className="text-muted">
+          {/* <Form.Text className="text-muted">
             We'll never share your email with anyone else.
-          </Form.Text>
+          </Form.Text> */}
         </Form.Group>
 
         <Form.Group className="mb-3" controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>비밀번호</Form.Label>
           <Form.Control type="password" placeholder="Password" />
         </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicCheckbox">
-          <Form.Check type="checkbox" label="Check me out" />
+          <Form.Check type="checkbox" label="로그인 유지" />
         </Form.Group>
         <Button variant="danger" type="submit">{/*type="submit"인 버튼이 있는 form에서는 onClick을 쓰면 안된다.*/}
           로그인
