@@ -48,9 +48,10 @@ export default App;
 //3. 쉬운 기능들로 사이트 조금 꾸미기
 
 //3-1. 메뉴들을 expensive,new 등으로 바꿔 누르면 해당 항목 아이템들 출력
-//* 신제품들 carousel로 상단에 표시
 //* 투명 배경인 사진들로 제품 사진 넣기,hover하면 사진만 커짐
 
+//*신제품들, Conscious choice(Trending Now) 제품들 carousel에 넣기
+//*장바구니 추가해보기(선택?)
 
 //잘 모르는 것- db.json에 있는 price, new항목들 기반으로 검색하는 방법
 //->let url = `https://my-json-server.typicode.com/bmbx08/hnmshoppingsite/products?q=${searchQuery}&price=39900`
