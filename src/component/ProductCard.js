@@ -19,11 +19,13 @@ const ProductCard = ({item}) => {
 
   return (
     <div className="product-card" onClick={showDetail}>
-      <img width="300px" src={item?.img}/>
-      <div>{item?.choice==true?"Conscious choice":""}</div>
-      <div>{item?.title}</div>
-      <div>₩{item?.price}</div>
-      <div>{item?.new==true?"신제품":""}</div>
+      <div className='img-container'>
+        <img className='card-image' width="300px" src={item?.img}/>
+      </div>
+      {item?.choice==true?(<div className='conscious-card-text'>Conscious choice</div>):(<div className='no-conscious'></div>)}
+      <div className='card-title'>{item?.title}</div>
+      <div className='card-price'>₩{item?.price}</div>
+      <div className='card-new'>{item?.new==true?"New!":""}</div>
     </div>
   )
 }

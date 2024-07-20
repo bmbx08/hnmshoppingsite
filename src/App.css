@@ -1,3 +1,28 @@
+@font-face{
+    font-family: 'NanumSquare';
+    font-style: 'normal';
+    font-weight: 400;
+    src: url('../public/fonts/NanumSquareR.otf');
+}
+
+@font-face{
+    font-family: 'NanumSquareB';
+    font-style: 'normal';
+    font-weight: 400;
+    src: url('../public/fonts/NanumSquareB.otf');
+}
+
+@font-face{
+    font-family: 'NanumSquareL';
+    font-style: 'normal';
+    font-weight: 400;
+    src: url('../public/fonts/NanumSquareL.otf');
+}
+
+body{
+    font-family: 'NanumSquare';
+}
+
 .top-navbar{
     display: flex;
     justify-content: space-between;
@@ -70,7 +95,8 @@
 }
 
 .menu-list a:hover{
-    color:lightgray;
+    color:rgb(255, 60, 0);
+    transition: all 0.3s ease 0s;
 }
 
 .search-area{
@@ -93,8 +119,47 @@ input{
     outline: -webkit-focus-ring-color auto 0px; 
 }
 
+.product-card{
+    margin-bottom: 0.5em;
+}
+
+.img-container{
+    overflow: hidden;
+}
+
 .product-card:hover{
+    cursor:pointer;
+}
+
+.product-card:hover .card-image{
     transform: scale(1.1);
+    transition: all 0.5s ease 0s;
+}
+
+.product-card>img{
+    margin-bottom: 0.5em;
+}
+
+.product-card:hover .card-title{
+    color:red;
+    transition: all 0.3s ease 0s;
+}
+
+.conscious-card-text{
+    font-size: 0.7em;
+    color: rgb(255, 138, 42)
+}
+
+.no-conscious{
+    margin-bottom: 0.5em;
+}
+
+.card-price{
+    font-size:0.8em;
+}
+
+.card-new{
+
 }
 
 .product-img{
