@@ -15,6 +15,7 @@ const Navbar = ({authenticate,setAuthenticate}) => {
   const menuList = [
     "Women",
     "Men",
+    "Unisex",
     "Baby",
     "Kids",
     "H&M Home",
