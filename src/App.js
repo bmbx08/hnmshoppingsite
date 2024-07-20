@@ -42,5 +42,16 @@ function App() {
 export default App;
 
 //꾸미기 아이디어
-//1. 신제품들 carousel로 상단에 표시
-//2. 
+
+//1. hnm사이트 따라 만들기
+//2. 새로운 제품들 사진,정보 담긴 db.json 기반으로 사이트 만들기(시간 좀 걸릴듯)
+//3. 쉬운 기능들로 사이트 조금 꾸미기
+
+//3-1. 메뉴들을 expensive,new 등으로 바꿔 누르면 해당 항목 아이템들 출력
+//* 신제품들 carousel로 상단에 표시
+//* 투명 배경인 사진들로 제품 사진 넣기,hover하면 사진만 커짐
+
+
+//잘 모르는 것- db.json에 있는 price, new항목들 기반으로 검색하는 방법
+//->let url = `https://my-json-server.typicode.com/bmbx08/hnmshoppingsite/products?q=${searchQuery}&price=39900`
+//처럼 쿼리 뒤에 &이후 원하는 쿼리 추가

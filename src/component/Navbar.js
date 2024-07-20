@@ -4,18 +4,21 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {faUser} from "@fortawesome/free-regular-svg-icons";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import {faBars} from "@fortawesome/free-solid-svg-icons";
+import {faEllipsis} from "@fortawesome/free-solid-svg-icons";
+import {faHeart} from "@fortawesome/free-regular-svg-icons";
+import {faBasketShopping} from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router";
 import Button from 'react-bootstrap/Button';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 
 const Navbar = ({authenticate,setAuthenticate}) => {
   const menuList = [
-    "여성",
-    "Divided",
-    "남성",
-    "신생아/유아",
-    "아동",
+    "Women",
+    "Men",
+    "Baby",
+    "Kids",
     "H&M Home",
+    "Sport",
     "Sale",
     "지속가능성",
   ];
@@ -35,6 +38,12 @@ const Navbar = ({authenticate,setAuthenticate}) => {
     navigate('/');
   }
 
+  const getCategoryItems=(event)=>{
+    let keyword=event.target.textContent;
+    console.log(keyword.toLowerCase());
+    navigate(`/?category=${keyword.toLowerCase()}`)
+  }
+
   const search=(event)=>{
     if(event.key ==="Enter"){
       console.log("Enter key",event.key);
@@ -46,7 +55,6 @@ const Navbar = ({authenticate,setAuthenticate}) => {
   }
 
 
-
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -55,6 +63,13 @@ const Navbar = ({authenticate,setAuthenticate}) => {
   return (
     <div>
       <div className="top-navbar">
+        <div className="top-left">
+          <div>고객 서비스</div>
+          <div>뉴스레터</div>
+          <div>매장 찾기</div>
+          <div><FontAwesomeIcon size="2xl" icon={faEllipsis} /></div>
+        </div>
+
         <Button variant="dark" className="d-sm-none" onClick={handleShow}>
           <FontAwesomeIcon icon={faBars} />
         </Button>
@@ -73,21 +88,34 @@ const Navbar = ({authenticate,setAuthenticate}) => {
           <Offcanvas.Body>
             <ul className="menu-list d-block d-sm-none">
               {menuList.map((menu) => (
-                <li><a href="#">{menu}</a></li>
+                <li><a onClick={(event)=>getCategoryItems(event)}>{menu}</a></li>
               ))}
             </ul>
           </Offcanvas.Body>
         </Offcanvas>
 
-        {authenticate?(<div className="login-button" onClick={logoutUser}>
-          <FontAwesomeIcon className="user-icon" icon={faUser} />
-          <div>로그아웃</div>
-        </div>):
-        (<div className="login-button" onClick={goToLogin}>
-          <FontAwesomeIcon className="user-icon" icon={faUser} />
-          <div>로그인</div>
-        </div>)
-        }
+        
+        <div className="top-right">
+          {authenticate?(
+            <div className="top-right-button" onClick={logoutUser}>
+              <FontAwesomeIcon className="user-icon" size="lg" icon={faUser} />
+              <div className="user-text">로그아웃</div>
+            </div>
+          ):(
+            <div className="top-right-button" onClick={goToLogin}>
+              <FontAwesomeIcon className="user-icon" size="lg" icon={faUser} />
+              <div className="user-text">로그인</div>
+            </div>
+          )}
+          <div className="top-right-button" onClick={goToLogin}>
+            <FontAwesomeIcon className="user-icon" size="lg" icon={faHeart} />
+            <div className="user-text">즐겨찾기</div>
+          </div>
+          <div className="top-right-button" onClick={goToLogin}>
+            <FontAwesomeIcon className="user-icon" size="lg" icon={faBasketShopping} />
+            <div className="user-text">장바구니</div>
+          </div>
+        </div>
         
       </div>
 
@@ -102,7 +130,7 @@ const Navbar = ({authenticate,setAuthenticate}) => {
       <div className="menu-area">
         <ul className="menu-list d-none d-sm-flex">
           {menuList.map((menu) => (
-            <li><a href="#">{menu}</a></li>
+            <li><a onClick={(event)=>getCategoryItems(event)} href="#">{menu}</a></li>
           ))}
         </ul>
 
